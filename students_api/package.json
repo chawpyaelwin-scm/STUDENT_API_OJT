@@ -1,0 +1,30 @@
+{
+  "name": "final-student-api",
+  "version": "1.0.0",
+  "description": "Final Tutorial",
+  "main": "handler.js",
+  "scripts": {
+    "admin": "dynamodb-admin",
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "SOE HTET AUNG",
+  "license": "ISC",
+  "dependencies": {
+    "ajv": "^6.5.1",
+    "aws-sdk": "^2.268.1",
+    "axios": "^0.18.0",
+    "crypto": "^1.0.1",
+    "moment": "^2.22.2",
+    "pg": "^7.8.0",
+    "uuid": "^3.3.2",
+    "validator": "^10.5.0",
+    "xml2js": "^0.4.19"
+  },
+  "devDependencies": {
+    "dynamodb-admin": "^2.0.2",
+    "mocha": "^5.2.0",
+    "serverless-dynamodb-local": "^0.2.36",
+    "serverless-offline": "^3.32.1"
+  }
+}

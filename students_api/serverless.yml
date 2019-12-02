@@ -1,0 +1,67 @@
+service: student-api
+
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: dev
+  region: ap-northeast-1
+  timeout: 60
+  environment:
+    STAGE: ${self:provider.stage}
+    IS_LOCAL: ${self:custom.environment.${self:provider.stage}.IS_LOCAL}
+    POSTGRES: ${self:custom.environment.${self:provider.stage}.POSTGRES}
+
+custom:
+  environment: ${file(./config/env.json)}
+  postgreSQL:
+    start:
+      migrate: true
+
+functions:
+  callFunction:
+    handler: handler.callHandler
+    events:
+        - http:
+            path: user/signup
+            method: post
+            cors: true
+        - http:
+            path: user/login
+            method: post
+            cors: true
+        - http:
+            path: user/logout
+            method: post
+            cors: true
+        - http:
+            path: user/profile
+            method: get
+            cors: true
+        - http:
+            path: student
+            method: get
+            cors: true
+        - http:
+            path: student
+            method: post
+            cors: true
+        - http:
+            path: student
+            method: delete
+            cors: true
+        - http:
+            path: student/{stu_id}
+            method: get
+            cors: true
+        - http:
+            path: student/{stu_id}
+            method: put
+            cors: true
+        - http:
+            path: student/{stu_id}
+            method: delete
+            cors: true
+
