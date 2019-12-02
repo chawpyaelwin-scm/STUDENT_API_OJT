@@ -30,6 +30,7 @@ class UserModel extends AbstractModel {
    * @return {UserModel}
    */
   static async create(params) {
+    console.log("prams::::",params);
     // Confirm no duplicate email address
     const existingUser = await this.getByEmail(params.email).catch(error => {
       super.throwCustomError(error, "Failed to check existing user。");
