@@ -11,7 +11,7 @@
   "author": "SOE HTET AUNG",
   "license": "ISC",
   "dependencies": {
-    "ajv": "^6.5.1",
+    "ajv": "^6.12.3",
     "aws-sdk": "^2.268.1",
     "axios": "^0.18.0",
     "crypto": "^1.0.1",
